@@ -127,7 +127,7 @@ def admin_only(f):
 
 
 # Register new users into the User database
-@app.route('/register', methods=["GET", "POST"])
+@app.route('/register', methods=["POST"])
 def register():
     form = RegisterForm()
     if form.validate_on_submit():
@@ -158,7 +158,7 @@ def register():
     return render_template("register.html", form=form, current_user=current_user)
 
 
-@app.route('/login', methods=["GET", "POST"])
+@app.route('/login', methods=["POST"])
 def login():
     form = LoginForm()
     if form.validate_on_submit():
