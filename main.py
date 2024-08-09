@@ -76,11 +76,11 @@ class BlogPost(db.Model):
     author_id: Mapped[int] = mapped_column(Integer, db.ForeignKey("users.id"))
     # Create reference to the User object. The "posts" refers to the posts property in the User class.
     author = relationship("User", back_populates="posts")
-    title: Mapped[str] = mapped_column(String(250), unique=True, nullable=False)
-    subtitle: Mapped[str] = mapped_column(String(250), nullable=False)
-    date: Mapped[str] = mapped_column(String(250), nullable=False)
+    title: Mapped[str] = mapped_column(String(550), unique=True, nullable=False)
+    subtitle: Mapped[str] = mapped_column(String(550), nullable=False)
+    date: Mapped[str] = mapped_column(String(550), nullable=False)
     body: Mapped[str] = mapped_column(Text, nullable=False)
-    img_url: Mapped[str] = mapped_column(String(250), nullable=False)
+    img_url: Mapped[str] = mapped_column(String(950), nullable=False)
     # Parent relationship to the comments
     comments = relationship("Comment", back_populates="parent_post")
 
